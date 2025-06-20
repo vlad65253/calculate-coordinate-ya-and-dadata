@@ -18,5 +18,24 @@ services:
       timeout: 5s
       retries: 5
 
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gigacom-app
+    restart: always
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/geo_db
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      DADATA_TOKEN: fd8924322e36016fb2325b3db11182e23ed50376
+      DADATA_SECRET: 9dfe7c3470045c2a52da1790d3f0f5081c8c069b
+      YANDEX_API_KEY: 92474604-a428-44ef-941f-33f2bb578971
+
 volumes:
   mysql-data:
