@@ -6,7 +6,7 @@ Java Spring Boot-приложение, которое получает коор�
 
 ## Стек технологий
 
-Java 17, Spring Boot 3.x, Maven, MySQL (в контейнере Docker), Docker & Docker Compose, REST API (JSON), Lombok, Yandex Maps API, Dadata API
+Java 17, Spring Boot 3.5.1, Maven, MySQL (в контейнере Docker), Docker & Docker Compose, REST API (JSON), Lombok, Yandex Maps API, Dadata API
 
 ---
 
