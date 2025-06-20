@@ -1,5 +1,6 @@
 package com.test.gigacom.service;
 
+import com.test.gigacom.exception.DataNotFoundExceptions;
 import com.test.gigacom.model.dto.GeoCoordinates;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -35,7 +36,7 @@ public class YandexGeoService {
             List<Object> featureMember = (List<Object>) geoObjectCollection.get("featureMember");
 
             if (featureMember == null || featureMember.isEmpty()) {
-                throw new RuntimeException("Yandex API: адрес не найден");
+                throw new DataNotFoundExceptions("Yandex API: адрес не найден");
             }
 
             Map<String, Object> geoObject = (Map<String, Object>) ((Map<String, Object>) featureMember.get(0)).get("GeoObject");
@@ -49,7 +50,7 @@ public class YandexGeoService {
             return new GeoCoordinates(lat, lon);
         } catch (Exception e) {
             log.error("Ошибка при вызове Yandex API: {}", e.toString());
-            throw new RuntimeException("Ошибка при получении координат от Yandex", e);
+            throw new DataNotFoundExceptions("Ошибка при получении координат от Yandex");
         }
     }
 
