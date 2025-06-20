@@ -41,7 +41,7 @@ public class YandexGeoService {
             Map<String, Object> geoObject = (Map<String, Object>) ((Map<String, Object>) featureMember.get(0)).get("GeoObject");
             Map<String, Object> point = (Map<String, Object>) geoObject.get("Point");
 
-            String pos = (String) point.get("pos"); // "55.274247 25.19718"
+            String pos = (String) point.get("pos");
             String[] parts = pos.split(" ");
             double lon = Double.parseDouble(parts[0]);
             double lat = Double.parseDouble(parts[1]);
