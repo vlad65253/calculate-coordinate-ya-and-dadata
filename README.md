@@ -15,8 +15,8 @@ Java 17, Spring Boot 3.x, Maven, MySQL (в контейнере Docker), Docker 
 ### 1. Клонируйте репозиторий
 
 ```bash
-git clone https://github.com/your-username/geo-compare-api.git
-cd geo-compare-api
+git clone https://github.com/your-username/calculate-coordinate-ya-and-dadata.git
+cd calculate-coordinate-ya-and-dadata
 ```
 
 ### 2. Соберите проект
